@@ -102,11 +102,11 @@ __device__ __forceinline__ void trace_ray(Vec3 *origin, Vec3 *direction,
         ray_color.z *= obj->material.color.c;
       } else {
         sky_emitted_light.x =
-            ((r_d.y + 0.1) * 0.1) * sky_emitted_light_strength * ray_color.x;
+            (1) * sky_emitted_light_strength * ray_color.x;
         sky_emitted_light.y =
-            ((r_d.y + 0.1) * 0.5) * sky_emitted_light_strength * ray_color.y;
+            (1) * sky_emitted_light_strength * ray_color.y;
         sky_emitted_light.z =
-            ((r_d.y + 0.1) * 0.9) * sky_emitted_light_strength * ray_color.z;
+            (1) * sky_emitted_light_strength * ray_color.z;
 
         add_v(ray_energy, &sky_emitted_light);
         break;
